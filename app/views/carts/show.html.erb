@@ -5,8 +5,7 @@
   </header>
   <% if enhanced_cart.size == 0 %>
     <h3> It appears you do not have any items in your cart. Take a look at our section <%= link_to 'here', :root %> </h3>
-  <% end %>
-  <% if enhanced_cart.size != 0 %>
+  <% else %>
     <div class="panel panel-default items">
       <table class="table table-bordered">
         <thead>
