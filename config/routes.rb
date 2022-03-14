@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post   :add_item
     post   :remove_item
   end
-
+  get '/about', to: 'about#index'
   resources :orders, only: [:create, :show]
 
   namespace :admin do
