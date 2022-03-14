@@ -1,2 +1,34 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Inventory and Category Count</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th >Selection</th>
+      <th>Count</th>
+      <th>Links</th>
+    </tr>
+  </thead>  
+  <tr>
+    <th><h3> Number of <%= link_to 'Products', admin_products_path %></h3></th>
+    <td>
+      <%= @product_count %>
+    </td>
+    <td>
+      <% Product.all.each do |category| %>
+        See all <%= link_to category.name, category %> products
+        <br>
+      <% end %>
+    </td>
+  </tr>
+    <tr>
+    <th><h3> Number of <%= link_to 'Categories', admin_products_path %></h3></th>
+    <td>
+      <%= @category_count %>
+    </td>
+    <td>
+      <% Category.all.each do |category| %>
+        See all <%= link_to category.name, category %> products
+        <br>
+      <% end %>
+    </td>
+  </tr>
+</table>
